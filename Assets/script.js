@@ -1,38 +1,20 @@
-const cities = [];
-fetch(endpoint)
-  .then(blob => blob.json())
-  .then(data => cities.push(...data));
+/*Added variables for weather api selections*/
+var city = document.querySelector(".weatherLocation");
+var day = document.querySelector(".dayWeather");
+var humidity = document.querySelector(".weather_detail--humidity");
+var precipitation = document.querySelector(".weather_detail--precipitation");
+var wind = document.querySelector(".weather_detail--wind");
+var photo = document.querySelector(".weatherPhoto");
+var temp = document.querySelector(".temperature");
 
-function findMatches(wordToMatch, cities) {
-  return cities.filter(place => {
-    // use regex to figure out if the city or state matches what was searched
-    const regex = new RegExp(wordToMatch, 'gi');
-    return place.city.match(regex) || place.state.match(regex)
-  });
+/*Fetched city weather info using OpenWeatherAPI*/
+var weatherApiKey = "92ca0200c0393370e2aa006ad308d849";
+var weatherBaseEndpoint = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}"
+var getWeatherByCityName = async (city) => {
+  var endpoint = weatherBaseEndpoint + "&q=" + city;
+  var response = await fetch(endpoint);
+  var weather = await response.json();
+  console.log (weather);
 }
 
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-}
-
-function displayMatches() {
-  const matchArray = findMatches(this.value, cities);
-  const html = matchArray.map(place => {
-    const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
-    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
-    return `
-      <li>
-        <span class="name">${cityName}, ${stateName}</span>
-
-      </li>
-    `;
-  }).join('');
-  suggestions.innerHTML = html;
-}
-
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
+getWeatherByCityName("Charlotte");
