@@ -11,7 +11,7 @@ body {
   font-size: 23px;
   color: white;
 }
-
+/*Header*/
 .wrapper {
   font-size: 37px;
   color: rgb(32, 35, 177);
@@ -28,7 +28,7 @@ body {
   box-sizing: border-box;
   white-space: nowrap;
 }
-
+/*Search Bar*/
 .searchWeather {
   color: inherit;
   border: none;
@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-
+/*City*/
 .weatherLocation {
   margin: 20px 0;
   font-weight: 500;  
@@ -69,18 +69,30 @@ body {
   height: 30px;
   background-size: cover;
 }
-
+/*daily weather information for weather details*/
 .todaysForecast {
+  flex-wrap: wrap;
   width: 100%;
   text-align: center;
   justify-content: space-between;
   display: flex;
 }
-
-.todaysForecast_icon {
-  max-width: 50%;
+/*Weather Cards*/
+.todaysForecastInfo {
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 20px 3px 18px;
+  margin: 0px 10px 10px;
+  background-color: #1054bbb7;
+  min-width: 150px;
+  width: calc(20% - 20px);
+  flex-grow: 1;  
 }
 
+.forecastIcon {
+  max-width: 50%;
+}
+/*Icons for weather details*/
 .weather_detail--humidity::before {
   background: url(Assets/Images/humid1.jpg);
 }
@@ -88,12 +100,15 @@ body {
 .weather_detail--precipitation::after {
   background-image: url(Assets/Images/precipitation.jpg);
 }
+
 .weather_detail--wind::before {
   background-image: url(Assets/Images/wind.jpg);
 }
+/*Main image*/
 .weatherPhoto {
   width: 407px;
   align-self: center;
 }
+
 
 
