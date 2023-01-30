@@ -10,60 +10,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet"/>
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-</head>
+  </head>
   <body>
-    <div class="weather">
-      <input type="search" class="searchWeather" placeholder="Search by City">
+    <div class="wrapper">
+      <header>Weather You Look<i class="bx bx-border-all"></i></header>
     </div>
-    <section>
-      <div class="currentWeather">
+    <div class="weather">
+      <input type="search" class="searchWeather" placeholder="Enter City Name">
+       <div class="currentWeather">
         <div class="weatherInfo">
-          <p class="dayWeather">today</p>
-          <h2 class="weatherLocation">Location</h2>
+          <h2 class="weatherLocation">City</h2>
+          <p class="dayWeather">Today's Weather</p>
           <div class="weatherStats">
-            <p class="weather_detail weather_detail--humidity"><span class="value">62</span>%</p>
+            <p class=" weather_detail weather_detail--humidity"><span class="value">62</span>%</p>
             <p class="weather_detail weather_detail--precipitation"><span class="value">2</span>%</p>
-            <p class="weather_detail weather_detail--wind"><span class="value">SSE, 4</span>m/s</p>
+            <p class="weather_detail weather_detail--wind"><span class="value">SSE, 4</span>m/s</p> 
           </div>          
-      </div> 
-      <img src="Assets/Images/weather site image.jpg" alt="different weather" class="weatherPhoto">
+        </div> 
+        <img src="Assets/Images/weather site image.jpg" alt="Four Seasons" class="weatherPhoto">
       <div class="temperature"><span class="value">+38</span> &deg;C</div>
-      </div>      
-      <div class="todaysForecast">
-        <section class="todaysForecastInfo">
-          <img src="Assets/Images/weather site image.jpg" alt="second photo" class="weatherPhoto2">
-          <h3 class="currentForecast">Day</h3>
-          <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
-        </section>
-        <section class="todaysForecastInfo">
-          <img src="Assets/Images/weather site image.jpg" alt="second photo" class="weatherPhoto2">
-          <h3 class="currentForecast">Day</h3>
-          <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
-        </section>
-        <section class="todaysForecastInfo">
-          <img src="Assets/Images/weather site image.jpg" alt="second photo" class="weatherPhoto2">
-          <h3 class="currentForecast">Day</h3>
-          <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
-        </section>
-        <section class="todaysForecastInfo">
-          <img src="Assets/Images/weather site image.jpg" alt="second photo" class="weatherPhoto2">
-          <h3 class="currentForecast">Day</h3>
-          <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
-        </section>
-        <section class="todaysForecastInfo">
-          <img src="Assets/Images/weather site image.jpg" alt="second photo" class="weatherPhoto2">
-          <h3 class="currentForecast">Day</h3>
-          <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
-        </section>
-      </div>
-    </section>
-
-    
-      
-    
-   </body>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+    </div>      
+    <div class="todaysForecast">
+      <article class="todaysForecastInfo">
+        <img src="Assets/Images/sunflower.jpg" alt="second photo" class="weatherPhoto2">
+        <h3 class="currentForecast">Day</h3>
+        <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
+      </article>
+      <article class="todaysForecastInfo">
+        <img src="Assets/Images/rain.jpg" alt="second photo" class="weatherPhoto2">
+        <h3 class="currentForecast">Day</h3>
+        <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
+      </article>
+      <article class="todaysForecastInfo">
+        <img src="Assets/Images/snow-and-mist.jpg" alt="second photo" class="weatherPhoto2">
+        <h3 class="currentForecast">Day</h3>
+        <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
+      </article>
+      <article class="todaysForecastInfo">
+        <img src="Assets/Images/lightning.jpg" alt="second photo" class="weatherPhoto2">
+        <h3 class="currentForecast">Day</h3>
+        <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
+      </article>
+      <article class="todaysForecastInfo">
+        <img src="Assets/Images/rain.jpg" alt="second photo" class="weatherPhoto2">
+        <h3 class="currentForecast">Day</h3>
+        <p class="forecastTemperature"><span class="value">+31</span> &deg;C</p>
+      </article>
+    </div>
+  </article>          
+ </body>    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
 </html>

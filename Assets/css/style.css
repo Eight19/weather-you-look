@@ -2,118 +2,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Lato", sans-serif;
-    background-color: rgb(17, 142, 180);
-}
-  
-  nav {
-    width: 300px;
-    position: fixed;
-    z-index: 1;
-    top: 60px;
-    left: 1px;
-    overflow-x: hidden;
-    padding: 0px;
-    display: block;
-    border-style: solid;
-    
-  }
-  
-  .wrapper {
-    padding: 21px;
-    width: 400px;
-    background-color: rgb(255, 255, 255);
-    font-family: "Lato", sans-serif;
-    font-size: 22px;
-    color: #6e7d8a;
-    display: block;
-  
-  }
-
-  .wrapper header {
-    font-size: 22px;
-    font-weight: 500;
-    color: rgb(33, 17, 99);
-    text-align: center;
-    align-items: center;
-    display: flex;
-    padding: 8px 4px;
-    border: 4px solid rgb(17, 142, 180);
-    width: 245px;
-   
-  }
-
- header i {
-    cursor: pointer;
-    font-size: 15px;
-    margin-right: 27px;
- } 
-
-.input-text input {
-    text-align: center;
-    align-items: center;
-    border: 4px solid rgb(17, 142, 180);
-    border-radius: 2px;
-    padding: 5px;
-    margin-left: 15px;
-    font-size: 17px;
- 
-}
-.input-text .searchtxt {
-    font-size: 17px;
-    color: rgb(255, 255, 255);
-    border: 2px;
-    border-radius: 1px;
-    border-color: rgb(17, 142, 180);
-    margin-right: 139px;
-    padding: 0px;
-    text-align: center;
-    background: rgb(105, 102, 102);
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle, #795ac0, #4385ac, #59c6f8);;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 23px;
+  color: white;
 }
 
-.searchtxt.error{
-    border: 1px solid grey;
-    background: white;
-    color: rgb(1, 14, 85);
-}
-.input-text .divider{
-    height: 1px;
-    width: 225px;
-    margin: 12px 0;
-    display: flex;
-    justify-content: center;
-    background: rgb(17, 142, 180);
-    align-items: center;
-}
-.divider::before{
-    font-size: 20px;
-    content: "or";
-    padding: 0 12px;
-    justify-content: center;
-    background: #ffffff;
+.wrapper {
+  font-size: 37px;
+  color: rgb(32, 35, 177);
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
 }
 
- .input-text button {
-    font-size: 17px;
-    width: 225px;
-    border: 1px solid black;
-    background: rgb(17, 142, 180);
-    margin-left: 15px;
- }
+.weather {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
 
- header {
-    text-align: center;
-    border-style: solid;
-    padding: 13px;
-    font-weight: 400px;
-    font-size: large;
- }
- 
-    
-  @media screen and (max-height: 450px) {
-    nav {padding-top: 15px;}
-    nav a {font-size: 18px;}
-  }
+.searchWeather {
+  color: inherit;
+  border: none;
+  width: 100%;
+  padding: 10px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  font: 20px;
+}
+
+.searchWeather::placeholder {
+  color: rgb(1, 24, 99);
+}
+
+.currentWeather {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weatherLocation {
+  margin: 20px 0;
+  font-weight: 500;  
+  font-size: 34px;
+}
+
+.dayWeather {
+  font-size: 30px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.weather_detail::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+}
+
+.todaysForecast {
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+.todaysForecast_icon {
+  max-width: 50%;
+}
+
+.weather_detail--humidity::before {
+  background: url(Assets/Images/humid1.jpg);
+}
+
+.weather_detail--precipitation::after {
+  background-image: url(Assets/Images/precipitation.jpg);
+}
+.weather_detail--wind::before {
+  background-image: url(Assets/Images/wind.jpg);
+}
+.weatherPhoto {
+  width: 407px;
+  align-self: center;
+}
+
+
