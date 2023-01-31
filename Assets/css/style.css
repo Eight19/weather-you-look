@@ -36,7 +36,7 @@ body {
   padding: 10px 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(37, 25, 102);
   font: 20px;
 }
 
@@ -92,7 +92,7 @@ body {
 .forecastIcon {
   max-width: 50%;
 }
-/*Icons for weather details*/
+/*Icons for weather details
 .weather_detail--humidity::before {
   background: url(Assets/Images/humid1.jpg);
 }
@@ -103,7 +103,7 @@ body {
 
 .weather_detail--wind::before {
   background-image: url(Assets/Images/wind.jpg);
-}
+}*/
 /*Main image*/
 .weatherPhoto {
   width: 407px;
