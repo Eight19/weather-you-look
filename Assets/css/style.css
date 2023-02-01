@@ -5,7 +5,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
-  background: radial-gradient(circle, #795ac0, #4385ac, #59c6f8);;
+  background: radial-gradient(circle, #85b3cc ,#7c91c9 , #59c6f8);;
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 23px;
@@ -13,11 +13,12 @@ body {
 }
 /*Header*/
 .wrapper {
-  font-size: 37px;
-  color: rgb(32, 35, 177);
+  font-size: 45px;
+  color: rgb(28, 29, 95);
   box-sizing: border-box;
   padding: 20px;
   display: flex;
+  margin-left: 39%;
 }
 
 .weather {
@@ -31,17 +32,18 @@ body {
 /*Search Bar*/
 .searchWeather {
   color: inherit;
-  border: none;
+  border-radius: 3px;
+  border-color: white;
   width: 100%;
   padding: 10px 10px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: rgb(37, 25, 102);
+  margin-bottom: 27px;
+  background-color: rgb(69, 55, 148);
   font: 20px;
 }
 
 .searchWeather::placeholder {
-  color: rgb(1, 24, 99);
+  color: rgb(255, 255, 255);
 }
 
 .currentWeather {
@@ -50,13 +52,13 @@ body {
 }
 /*City*/
 .weatherLocation {
-  margin: 20px 0;
+  margin: 20px 0 10px;
   font-weight: 500;  
-  font-size: 34px;
+  font-size: 32px;
 }
-
+/*Today's Weather*/
 .dayWeather {
-  font-size: 30px;
+  font-size: 27px;
   margin: 10px 0;
   font-weight: 400;
 }
@@ -81,16 +83,16 @@ body {
 .todaysForecastInfo {
   border-radius: 5px;
   box-sizing: border-box;
-  padding: 20px 3px 18px;
-  margin: 0px 10px 10px;
-  background-color: #1054bbb7;
-  min-width: 150px;
+  padding: 20px 3px 20px;
+  margin: 8px 8px 20px;
+  background-color: #5b85c4b7;
+  min-width: 160px;
   width: calc(20% - 20px);
   flex-grow: 1;  
 }
 
 .forecastIcon {
-  max-width: 50%;
+  max-width: 70%;
 }
 /*Icons for weather details
 .weather_detail--humidity::before {
@@ -106,8 +108,10 @@ body {
 }*/
 /*Main image*/
 .weatherPhoto {
-  width: 407px;
+  width: 575px;
   align-self: center;
+  margin-bottom: 10%;
+  margin-top: 5%;
 }
 
 
