@@ -43,7 +43,9 @@ var weatherPhotos = [
     url: "Assets/Images/fog.jpg",
     ids: [701, 711, 721, 731, 751, 761, 762, 771, 781]
   },
- ] 
+
+]
+
 
 //Fetches city weather detail when searched and alerts user when a city is not found.//
 var getWeatherByCityName = async (cityString) => {
@@ -51,7 +53,7 @@ var getWeatherByCityName = async (cityString) => {
   if(cityString.includes(",")) {
       city = cityString.substring(0, cityString.indexOf(",")) + cityString.substring(cityString.lastIndexOf(","));
   } else {
-    city = cityString;
+      city = cityString;
   }
   var endpoint = weatherBaseEndpoint + "&q=" + city;
   var response = await fetch(endpoint);
@@ -60,9 +62,8 @@ var getWeatherByCityName = async (cityString) => {
     return;
   }
   var weather =  await response.json();
-  
   return weather;
- }
+}
 
  //Retrieves forecast details for cities//
 var getForecastByCityID = async (id) => {
@@ -81,18 +82,25 @@ var getForecastByCityID = async (id) => {
   })
   return daily;
 }
+var weatherForCity = async (city) => {
+  var weather = await getWeatherByCityName(city);
+  if(!weather) {
+      return;
+  } 
+  var cityID = weather.id;
+  currentWeatherUpdate(weather);
+  var forecast = await getForecastByCityID(cityID);
+  forecastUpdate(forecast);
+}
+var init = () => {
+    weatherForCity("Charlotte").then(() => document.body.style.filter = "blur(0.1)");
+}
+init();
 
 //Activates search when enter is pressed//
 textInput.addEventListener("keydown", async (e) => {
     if(e.keyCode === 13) {
-      var weather = await getWeatherByCityName(textInput.value);
-      if(!weather) {
-          return;
-      }
-      var cityID = weather.id;
-      currentWeatherUpdate(weather);
-      var forecast = await getForecastByCityID(cityID);
-      forecastUpdate(forecast);
+        weatherForCity(textInput.value);
     }
 })
 //City Options and Option tags//
