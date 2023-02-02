@@ -18,7 +18,7 @@ body {
   box-sizing: border-box;
   padding: 20px;
   display: flex;
-  margin-left: 39%;
+  margin-left: 32%;
 }
 
 .weather {
@@ -51,7 +51,7 @@ body {
   justify-content: space-between;
 }
 /*City*/
-.weatherLocation {
+.weatherCity {
   margin: 20px 0 10px;
   font-weight: 500;  
   font-size: 32px;
@@ -94,18 +94,19 @@ body {
 .forecastIcon {
   max-width: 70%;
 }
-/*Icons for weather details
+Icons for weather details*
 .weather_detail--humidity::before {
-  background: url(Assets/Images/humid1.jpg);
+  background: url("humid1.jpg");
 }
 
-.weather_detail--precipitation::after {
-  background-image: url(Assets/Images/precipitation.jpg);
+.weather_detail--pressure::after {
+  background-image: url("pressure.jpg");
 }
 
-.weather_detail--wind::before {
-  background-image: url(Assets/Images/wind.jpg);
-}*/
+.weather_detail--wind::after {
+  background-image: url("windIcon.jpg");
+}
+
 /*Main image*/
 .weatherPhoto {
   width: 575px;

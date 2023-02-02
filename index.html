@@ -15,14 +15,29 @@
       <header><i class="bx bx-border-all"></i>Weather You Look<i class="bx bx-border-all"></i></header>
     </div>
     <div class="weather">
-      <input type="search" class="searchWeather" placeholder="Enter City Name">
+      <input type="search" list= "cityOptions" class="searchWeather" placeholder="Enter City Name">
+      <!--City Options given to user when search bar is clicked -->
+      <datalist id="cityOptions">
+        <option value="Charlotte"></option>
+        <option value="Atlanta"></option>
+        <option value="Raleigh"></option>
+        <option value="Columbia"></option>
+        <option value="Los Angeles"></option>
+        <option value="Las Vegas"></option>
+        <option value="Houston"></option>
+        <option value="Miami"></option>
+        <option value="London"></option>
+        <option value="Paris"></option>
+        <option value="Cape Town"></option>
+        <option value="Ontario"></option>
+      </datalist>
        <div class="currentWeather">
-        <div class="weatherInfo">
-          <h2 class="weatherCity">City</h2>
-          <p class="dayWeather">Day</p>
-          <div class="weatherStats">
+        <div class="forcastDetails">
+          <h2 class="cityWeather">City</h2>
+          <p class="todaysWeather">Day</p>
+          <div class="statusDetail">
             <p class=" weather_detail weather_detail--humidity"><span class="value">62</span>%</p>
-            <p class="weather_detail weather_detail--precipitation"><span class="value">2</span>%</p>
+            <p class="weather_detail weather_detail--pressure"><span class="value">2</span>%</p>
             <p class="weather_detail weather_detail--wind"><span class="value">SSE, 4</span>m/s</p> 
           </div>          
         </div> 
@@ -59,6 +74,17 @@
   </article>          
  </body>    
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+   src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+   integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+   crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/utc.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/advancedFormat.min.js"></script>
+  <script>
+   dayjs.extend(window.dayjs_plugin_utc)
+   dayjs.extend(window.dayjs_plugin_advancedFormat)
+  </script>
   <script src="./assets/script.js"></script>
 </body>
 </html>
