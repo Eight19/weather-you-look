@@ -7,12 +7,13 @@ var wind = document.querySelector(".weather_detail--wind>.value");
 var photo = document.querySelector(".weatherPhoto");
 var temperature = document.querySelector(".weatherTemp>.value");
 var forecast = document.querySelector(".forecastDetails");
+var cityOptions = document.querySelector("#cityOptions")
 var weatherApiKey = "ba180dbe78d3d4d9710851c9e3f85643";
 var weatherBaseEndpoint = "https://api.openweathermap.org/data/2.5/weather?&units=imperial&appid=" + weatherApiKey; 
 var forecastBaseEndpoint = "https://api.openweathermap.org/data/2.5/forecast?units=metric&appid=" + weatherApiKey;
 var cityBaseEndPoint = "https://api.teleport.org/api/cities/?search=";
 
-//Weather images for cards//
+//Weather images populates based off current weather//
 var weatherPhotos = [
   {
     url: "Assets/Images/Sky.jpg",
@@ -42,14 +43,24 @@ var weatherPhotos = [
     url: "Assets/Images/fog.jpg",
     ids: [701, 711, 721, 731, 751, 761, 762, 771, 781]
   },
- ]
+ ] 
 
-//Fetches city weather detail when searched//
-var getWeatherByCityName = async (city) => {
+//Fetches city weather detail when searched and alerts user when a city is not found.//
+var getWeatherByCityName = async (cityString) => {
+  var city;
+  if(cityString.includes(",")) {
+      city = cityString.substring(0, cityString.indexOf(",")) + cityString.substring(cityString.lastIndexOf(","));
+  } else {
+    city = cityString;
+  }
   var endpoint = weatherBaseEndpoint + "&q=" + city;
   var response = await fetch(endpoint);
+  if(response.status !== 200) {
+    alert("Location not found!");
+    return;
+  }
   var weather =  await response.json();
-  console.log(weather);
+  
   return weather;
  }
 
@@ -75,17 +86,27 @@ var getForecastByCityID = async (id) => {
 textInput.addEventListener("keydown", async (e) => {
     if(e.keyCode === 13) {
       var weather = await getWeatherByCityName(textInput.value);
+      if(!weather) {
+          return;
+      }
       var cityID = weather.id;
       currentWeatherUpdate(weather);
       var forecast = await getForecastByCityID(cityID);
       forecastUpdate(forecast);
     }
 })
-
+//City Options and Option tags//
 textInput.addEventListener("input", async () => {
   var endpoint = cityBaseEndPoint + textInput.value
   var result = await (await fetch(endpoint)).json();
-  console.log(result);
+  cityOptions.innerHTML = "";
+  var cities = result._embedded['city:search-results'];
+  var length = cities.length > 6 ? 6 : cities.length;
+  for(let i = 0; i < length; i++) {
+    var option = document.createElement("option");
+    option.value = cities[i].matching_full_name;
+    cityOptions.appendChild(option);
+  }
 })
 
 //Displays humidity, pressure, wind direction(based off degrees), and temperature for each city per day//
